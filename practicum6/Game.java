@@ -24,11 +24,11 @@ public class Game {
 	}
 	@Override
 	public boolean equals(Object obj) {
-	    if(obj == this) return true; // Both objects have the same reference -> the objects are equal
-	    if((obj == null) || (obj.getClass() != this.getClass())) return false; // Classes are different -> objects are different
+	    if(obj == this) return true; 
+	    if((obj == null) || (obj.getClass() != this.getClass())) return false; 
 	    Game g = (Game) obj; // Cast obj into Product
-	    if( (this.huidigeWaarde() == g.huidigeWaarde()) && (this.getNaam().equals(g.getNaam())) ) return true; // Price and name are the same -> both products are the same
-	    return false; // At this point the two objects can't be equal
+	    if( (this.huidigeWaarde() == g.huidigeWaarde()) && (this.getNaam().equals(g.getNaam())) ) return true; 
+	    return false;
 	}
 	public String toString() {
 		return naam + ", uitgegeven in " + releaseJaar + "; nieuwprijs: " + nieuwprijs + " nu voor: €" + huidigeWaarde();
