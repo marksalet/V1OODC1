@@ -30,6 +30,14 @@ public class Persoon {
 		} else {
 			return false;
 		}
+	}
+	public Game zoekGameOpNaam(String nm) {
+		for (Game g : mijnGames) {
+			if (g.getNaam().equals(nm)) {
+				return g;
+			}
+		}
+		return null;
 		
 	}
 	public String toString() {
