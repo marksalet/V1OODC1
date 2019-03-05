@@ -18,14 +18,19 @@ public class Game {
 		int hj = LocalDate.now().getYear();
 		double waarde = nieuwprijs;
 		for(int rj = releaseJaar; rj < hj; rj++) {
-			waarde = waarde * 0.7;
+			waarde = Math.round((waarde * 0.7) * 100.0) / 100.0;
 		}
 		return waarde;
 	}
-	public boolean equals(Object andereObject) {
-		return true;
+	@Override
+	public boolean equals(Object obj) {
+	    if(obj == this) return true; // Both objects have the same reference -> the objects are equal
+	    if((obj == null) || (obj.getClass() != this.getClass())) return false; // Classes are different -> objects are different
+	    Game g = (Game) obj; // Cast obj into Product
+	    if( (this.huidigeWaarde() == g.huidigeWaarde()) && (this.getNaam().equals(g.getNaam())) ) return true; // Price and name are the same -> both products are the same
+	    return false; // At this point the two objects can't be equal
 	}
 	public String toString() {
-		return "";
+		return naam + ", uitgegeven in " + releaseJaar + "; nieuwprijs: " + nieuwprijs + " nu voor: €" + huidigeWaarde();
 	}
 }
