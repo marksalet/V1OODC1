@@ -1,3 +1,4 @@
+
 package practicum6;
 import java.time.LocalDate;
 
@@ -26,8 +27,8 @@ public class Game {
 	public boolean equals(Object obj) {
 	    if(obj == this) return true; 
 	    if((obj == null) || (obj.getClass() != this.getClass())) return false; 
-	    Game g = (Game) obj; // Cast obj into Product
-	    if( (this.huidigeWaarde() == g.huidigeWaarde()) && (this.getNaam().equals(g.getNaam())) ) return true; 
+	    Game g = (Game) obj;
+	    if( (this.getNaam().equals(g.getNaam())) ) return true; 
 	    return false;
 	}
 	public String toString() {

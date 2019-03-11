@@ -45,7 +45,7 @@ public class AutoHuur {
 			s += "er is geen auto bekend \ner is geen huurder bekend\naantal dagen: " + aantalDagen +  " en dat kost " + totaalPrijs();
 		}
 		else{
-			s += "Autotype: " + gehuurdeAuto+ "\nop naam van: " + huurder + "\naantal dagen: " + aantalDagen + " en dat kost " + totaalPrijs();
+			s += "Autotype: " + gehuurdeAuto + "\nop naam van: " + huurder + "\naantal dagen: " + aantalDagen + " en dat kost " + totaalPrijs();
 		}
 		return s;
 	}
