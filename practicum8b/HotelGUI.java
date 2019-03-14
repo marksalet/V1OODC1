@@ -15,10 +15,12 @@ import javafx.stage.Stage;
 
 public class HotelGUI extends Application {
     public static void main(String[] args) {
-        launch(args);
+        Application.launch(args);
     }
 
-    public void start(Stage scherm) {
+    public void start(Stage scherm) { 	
+    	Hotel hotel = new Hotel("Avondrust");
+
         scherm.setTitle("Tweepersoonsboekingen");
         GridPane grid = new GridPane();
         grid.setHgap(10);
@@ -62,10 +64,7 @@ public class HotelGUI extends Application {
         Label roomType = new Label("kamertype:");
         grid.add(roomType, 0, 5);
         final ComboBox roomTypeBox = new ComboBox();
-        roomTypeBox.getItems().addAll(
-                "Standaard, bedden: 2, € 60.0 p.n.",
-                "DeLuxe, bedden: 2, € 85.0 p.n."
-        );
+        roomTypeBox.getItems().addAll(hotel.getKamerTypen());
         roomTypeBox.setPrefWidth(200);
         grid.add(roomTypeBox, 2, 5);
 
@@ -96,9 +95,6 @@ public class HotelGUI extends Application {
         scherm.setResizable(false);
         scherm.show();
 
-        // Boeking toevoegen
-        Hotel h = new Hotel("Avondrood");
-
         boekButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
 
@@ -127,15 +123,15 @@ public class HotelGUI extends Application {
                 }
                 else {
                     // Add booking
-                    KamerType kt = h.getKamerTypen().get(0); // eerste type in lijst
-                    int nr = h.voegBoekingToe(van, tot, userTextField.getText(), addressBox.getText(), kt);
+                    KamerType kt = hotel.getKamerTypen().get(0); // eerste type in lijst
+                    int nr = hotel.voegBoekingToe(van, tot, userTextField.getText(), addressBox.getText(), kt);
 
                     if (nr != -1) {
                         System.out.println("Boeking krijgt kamernummer: " + nr);
                     } else {
                         System.out.println("Er is helaas geen kamer beschikbaar");
                     }
-                    System.out.println(h.toString());
+                    System.out.println(hotel.toString());
                     title.setText("Boeking succesvol!");
 
 

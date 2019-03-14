@@ -6,7 +6,6 @@ public class Boeking {
 	private LocalDate boekDatum, aankomstDatum, vertrekDatum;
 	private Klant deBoeker;
 	private Kamer geboekteKamer;
-	private Hotel hotel = new Hotel("Avondrust");
 
 	public Boeking(LocalDate aankomst, LocalDate vertrek) {
 		boekDatum = LocalDate.now();

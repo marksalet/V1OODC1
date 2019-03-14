@@ -23,7 +23,7 @@ public class Kamer {
 
 	public String toString() {
 		String s = "kamer: " + kamerNummer + " van type: " + hetType;
-		return s + " extra bed mogelijk: " + (extraBed ? "nee" : "ja");
+		return s + " extra bed mogelijk: " + (extraBed ? "ja" : "nee");
 	}
 }
 
